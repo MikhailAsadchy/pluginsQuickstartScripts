@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS magento2;
+CREATE SCHEMA magento2;

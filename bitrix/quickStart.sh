@@ -16,7 +16,7 @@ cd ../common/
 
 . ./_getSourcesFromGit.sh $gitRepositoryUrl $tempFolder
 
-. ./_extractBitrix.sh $bitrixRoot $bitrixArchievePath
+. ./_extractTar.sh $bitrixRoot $bitrixArchievePath
 
 . ./_copySourcesToTargetDirectory.sh $tempFolder/$gitProjectName $bitrixRoot/$bitrixModulesSubPath
 

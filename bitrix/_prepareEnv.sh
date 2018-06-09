@@ -5,6 +5,9 @@ rootDir=$1
 . ../common/_apache.sh
 . ../common/_fixPermissions.sh $rootDir
 
+. ../common/replacePhpIni.sh "${PWD}/php.ini"
+
+
 mysql -u "root" "-p113355" "" < "createBitrixSchema.sql"
 
 chromium-browser "http://localhost"
