@@ -10,4 +10,6 @@ rootDir=$1
 
 mysql -u "root" "-p113355" "" < "createBitrixSchema.sql"
 
+. ../common/_apache.sh
+
 chromium-browser "http://localhost"
