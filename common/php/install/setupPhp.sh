@@ -1,6 +1,6 @@
 #!/bin/bash
 
-phpVersion=7.2
+phpVersion=$1
 
 echo --------- install php${phpVersion} --------
 sudo apt-get install python-software-properties

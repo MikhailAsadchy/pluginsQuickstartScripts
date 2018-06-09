@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 sourceFile=$1
+phpVersion=$2
 user=mikhail
-phpVersion=7.2
 
 targetDestination="/etc/php/${phpVersion}/apache2/php.ini"
 

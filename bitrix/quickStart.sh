@@ -11,6 +11,8 @@ gitProjectName="RobocallerBitrix"
 bitrixArchievePath="/media/mikhail/30eaaffa-a22e-45b0-9345-8ac6247f9240/installers/bitrix/business_encode_php5.tar.gz"
 bitrixModulesSubPath="bitrix/modules"
 
+phpVersion=7.2
+
 cd ../common/
 . ./_cleanRootDirectory.sh ${bitrixRoot}
 
@@ -21,4 +23,4 @@ cd ../common/
 . ./_copySourcesToTargetDirectory.sh $tempFolder/$gitProjectName $bitrixRoot/$bitrixModulesSubPath
 
 cd ../bitrix/
-. ./_prepareEnv.sh $bitrixRoot
+. ./_prepareEnv.sh $bitrixRoot $phpVersion

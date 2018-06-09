@@ -11,6 +11,8 @@ gitProjectName="RobocallerMagento2"
 magento2ArchievePath="/media/mikhail/30eaaffa-a22e-45b0-9345-8ac6247f9240/installers/magento2/Magento-CE-2.2.4_sample_data-2018-05-01-09-51-36.tar.gz"
 magento2Path=${apacheRoot}/magento2
 
+phpVersion=7.0
+
 cd ../common/
 . ./_cleanRootDirectory.sh ${apacheRoot}
 
@@ -21,4 +23,4 @@ cd ../common/
 . ./_copySourcesToTargetDirectory.sh $tempFolder/$gitProjectName $magento2Path
 
 cd ../magento2/
-. ./_prepareEnv.sh $magento2Path
+. ./_prepareEnv.sh $magento2Path $phpVersion
