@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS wooCommerce;
+CREATE SCHEMA wooCommerce;
