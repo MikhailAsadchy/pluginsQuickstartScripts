@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS bitrix;
-CREATE SCHEMA bitrix;
+DROP DATABASE IF EXISTS sitemanager;
+CREATE SCHEMA sitemanager;
