@@ -29,14 +29,10 @@ unzip -q  ${wooCommerceArchivePath} -d ${apache2Root}/wordpress/wp-content/plugi
 
 echo ------------------------------------------------
 echo ------------------------------------------------
-echo ------------------------------------------------
-echo ------------------------------------------------
 echo "some actions we need to do before start development:"
 echo "1) Activate wooCommerce plugin"
-echo "2) Import products from /var/www/html/wordpress/wp-content/plugins/woocommerce/sample-data/sample_products.csv using product import"
-echo "3) Run wooCommerce configure wizard and setup the site and payment options (cash will be enough)"
-echo ------------------------------------------------
-echo ------------------------------------------------
-echo ------------------------------------------------
+echo "2) Run wooCommerce configure wizard and setup the site and payment options (cash will be enough)"
+echo "3) Import products from /var/www/html/wordpress/wp-content/plugins/woocommerce/sample-data/sample_products.csv using product import"
+echo "4) Activate rcaller plugin and make sure it works well"
 echo ------------------------------------------------
 echo ------------------------------------------------
