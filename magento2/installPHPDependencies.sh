@@ -2,4 +2,7 @@
 
 phpVersion=$1
 
-sudo apt-get install php$phpVersion-mcrypt php$phpVersion-intl php$phpVersion-soap php$phpVersion-bcmath
+sudo apt-get install php${phpVersion}-mcrypt
+sudo apt-get install php${phpVersion}-intl
+sudo apt-get install php${phpVersion}-soap
+sudo apt-get install php${phpVersion}-bcmath

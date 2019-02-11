@@ -2,7 +2,7 @@
 
 sourceFile=$1
 phpVersion=$2
-user=mikhail
+user=mikhail_asadchy@epam.com
 
 targetDestination="/etc/php/${phpVersion}/apache2/php.ini"
 

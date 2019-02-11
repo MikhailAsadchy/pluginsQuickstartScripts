@@ -2,17 +2,26 @@
 rootDir=$1
 phpVersion=$2
 
-platformScripts="/media/mikhail/30eaaffa-a22e-45b0-9345-8ac6247f9240/php/plugins/scripts"
+CURRENT_DIR=${PWD}
 
-. ./installPHPDependencies.sh $phpVersion
+platformScripts="/home/mikhail_asadchy@epam.com/downloads/php/plugins/scripts"
 
 cp -a ${platformScripts}/. ${rootDir}/
 
-. ../common/replacePhpIni.sh "${PWD}/php.ini" $phpVersion
+cd ../common/php/
+. ./reinstall.sh ${phpVersion}
+cd ${CURRENT_DIR}
 
-. ../common/_fixPermissions.sh $rootDir
+sudo a2enmod rewrite
+systemctl restart apache2
+
+. ./installPHPDependencies.sh ${phpVersion}
+
+. ../common/replacePhpIni.sh "${PWD}/php.ini" ${phpVersion}
+
+. ../common/_fixPermissions.sh ${rootDir}
 . ../common/_apache.sh
-. ../common/_fixPermissions.sh $rootDir
+. ../common/_fixPermissions.sh ${rootDir}
 
 mysql -u "root" "-p113355" "" < "createMagento2Schema.sql"
 

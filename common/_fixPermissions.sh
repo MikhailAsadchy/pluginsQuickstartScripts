@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 directory=$1
-userName=mikhail
+userName=mikhail_asadchy@epam.com
 
 if [ ! -z "$1" ]
   then

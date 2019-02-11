@@ -1,25 +1,33 @@
 #!/usr/bin/env bash
 
-CURRENT_FOLDER=${PWD}
+CURRENT_FOLDER=$(realpath ${PWD})
 
-tempFolder="/media/mikhail/30eaaffa-a22e-45b0-9345-8ac6247f9240/tempFolder"
-bitrixRoot="/var/www/html"
-
-gitRepositoryUrl="github.com/MikhailAsadchy/RobocallerBitrix"
+repoRoot=$(realpath "../")
+bitrixApplicationRoot="/var/www/html"
 gitProjectName="RobocallerBitrix"
-
-bitrixArchievePath="/media/mikhail/30eaaffa-a22e-45b0-9345-8ac6247f9240/installers/bitrix/business_encode_php5.tar.gz"
-
+gitRepositoryUrl="github.com/MikhailAsadchy/"${gitProjectName}
+bitrixArchivePath=$(realpath ${repoRoot}"/archives/bitrix/business_encode_php5.tar.gz")
 phpVersion=7.2
 
-cd ../common/
-. ./_cleanRootDirectory.sh ${bitrixRoot}
+echo ${gitRepositoryUrl}
+echo ${bitrixArchivePath}
 
-. ./_getSourcesFromGit.sh $gitRepositoryUrl $tempFolder
+cd ${repoRoot}"/common/"
+echo "cleaning apache root directory..."
+. ./_cleanRootDirectory.sh ${bitrixApplicationRoot}
 
-. ./_extractTar.sh $bitrixRoot $bitrixArchievePath
+cd ${repoRoot}"/common/"
+echo "getting sources from git..."
+. ./_getSourcesFromGit.sh ${gitRepositoryUrl} ${repoRoot}
+#
+#echo "extracting sources..."
+#. ./_extractTar.sh $bitrixRoot $bitrixArchivePath
+#
+#echo "coping sources to apache root dir..."
+#. ./_copySourcesToTargetDirectory.sh $repoRoot/$gitProjectName $bitrixRoot
+#
+#cd ../bitrix/
+#echo "preparing bitrix..."
+#. ./_prepareEnv.sh $bitrixRoot $phpVersion
 
-. ./_copySourcesToTargetDirectory.sh $tempFolder/$gitProjectName $bitrixRoot
-
-cd ../bitrix/
-. ./_prepareEnv.sh $bitrixRoot $phpVersion
+cd ${CURRENT_FOLDER}
