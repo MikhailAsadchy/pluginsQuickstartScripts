@@ -2,9 +2,13 @@
 
 sourceFile=$1
 phpVersion=$2
-user=mikhail_asadchy@epam.com
 
-targetDestination="/etc/php/${phpVersion}/apache2/php.ini"
+targetDestination=$(realpath "/etc/php/${phpVersion}/apache2/php.ini")
 
-sudo chown -R $user $targetDestination
+# validate arguments
+. ./checkDirectory.sh ${sourceFile}
+. ./checkDirectory.sh ${targetDestination}
+
+sudo chown -R ${USER} ${targetDestination}
+sudo chmod -R 777 ${targetDestination}
 cp -rf ${sourceFile} ${targetDestination}
