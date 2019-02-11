@@ -1,0 +1,22 @@
+=======================================================
+sudo chown -R mikhail /var/
+=======================================================
+in /etc/apache2/sites-available/000-default.conf
+<Directory "/var/www/html">
+        AllowOverride  all
+</Directory>
+=======================================================
+
+sudo
+cd /var/www/html/magento2 && find var generated vendor pub/static pub/media app/etc -type f -exec chmod u+w {} + && find var generated vendor pub/static pub/media app/etc -type d -exec chmod u+w {} + && chmod u+x bin/magento
+
+=======================================================
+
+cd /var/www/html/magento2
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod u+w {} +
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod u+w {} +
+chmod u+x bin/magento
+
+=======================================================
+
+Seems like we do need to make www-data owner of the /var/www/html

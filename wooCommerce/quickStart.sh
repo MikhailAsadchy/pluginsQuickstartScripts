@@ -2,14 +2,14 @@
 
 CURRENT_FOLDER=${PWD}
 
-tempFolder="/media/mikhail/30eaaffa-a22e-45b0-9345-8ac6247f9240/tempFolder"
+tempFolder="/home/mikhail_asadchy@epam.com/downloads/tempFolder"
 apache2Root="/var/www/html"
 
 gitProjectName="RobocallerWooCommerce"
 gitRepositoryUrl="github.com/MikhailAsadchy/"${gitProjectName}
 
-wordPressArchivePath="/media/mikhail/30eaaffa-a22e-45b0-9345-8ac6247f9240/installers/wooCommerce/wordpress-4.9.6.tar.gz"
-wooCommerceArchivePath="/media/mikhail/30eaaffa-a22e-45b0-9345-8ac6247f9240/installers/wooCommerce/woocommerce.3.4.2.zip"
+wordPressArchivePath="/home/mikhail_asadchy@epam.com/downloads/installers/wooCommerce/wordpress-4.9.6.tar.gz"
+wooCommerceArchivePath="/home/mikhail_asadchy@epam.com/downloads/installers/wooCommerce/woocommerce.3.4.2.zip"
 
 phpVersion=7.2
 
